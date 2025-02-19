@@ -18,7 +18,7 @@ export default function InfiniteScroll({ initialArticles, fetchMore }) {
     if (inView && hasMore && !isLoading) {
       loadMore()
     }
-  }, [inView, hasMore, isLoading]) // Added hasMore and isLoading to dependencies
+  }, [inView, hasMore, isLoading]) 
 
   const loadMore = async () => {
     setIsLoading(true)

@@ -1,18 +1,15 @@
 import { render, screen } from "@testing-library/react";
 import NewsCard from "@/components/news-card";
 
-// Mock Lucide icons
 jest.mock("lucide-react", () => ({
   Calendar: () => <div data-testid="calendar-icon">📅</div>,
 }));
 
-// Mock next/image
 jest.mock("next/image", () => ({
   __esModule: true,
   default: (props) => <img {...props} alt={props.alt} />,
 }));
 
-// Mock next/link
 jest.mock("next/link", () => ({
   __esModule: true,
   default: ({ children, href }) => <a href={href}>{children}</a>,

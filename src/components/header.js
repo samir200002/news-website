@@ -33,13 +33,11 @@ const categories = [
     <header className="border-b bg-background">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Newspaper className="h-6 w-6" />
             <span className="text-xl font-bold">NewsApp</span>
           </Link>
 
-          {/* Desktop View: Categories + Search (Center) */}
           <div className="hidden lg:flex items-center space-x-4 flex-1 justify-center">
             {categories.map((cat) => (
               <Link
@@ -52,9 +50,7 @@ const categories = [
             ))}
           </div>
 
-          {/* Right Side: ModeToggle (Always visible) + Search (Desktop) */}
           <div className="flex items-center space-x-4">
-            {/* Desktop Search */}
             <form onSubmit={handleSearch} className="hidden lg:block relative w-64">
               <Input
                 type="search"
@@ -65,20 +61,16 @@ const categories = [
               />
             </form>
 
-            {/* Dark Mode Toggle - Always Visible */}
             <ModeToggle />
 
-            {/* Mobile View: Hamburger Menu (For screens < 1024px) */}
             <button className="lg:hidden p-2" onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {menuOpen && (
           <div className="lg:hidden flex flex-col items-center space-y-4 p-4 bg-white shadow-md rounded-md">
-            {/* Mobile Search */}
             <form onSubmit={handleSearch} className="w-full">
               <Input
                 type="search"
@@ -89,7 +81,6 @@ const categories = [
               />
             </form>
 
-            {/* Mobile Categories */}
             <div className="flex flex-wrap justify-center gap-2">
               {categories.map((cat) => (
                 <Link
